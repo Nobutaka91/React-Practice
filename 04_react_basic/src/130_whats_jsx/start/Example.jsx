@@ -6,6 +6,7 @@ const Example = () => {
   // React.createElement("h1", {
   //   className: "greeting"
   // }, "Hello World");
+  console.log(sample1);
 
   const sample2 = (
     <div>
