@@ -12,8 +12,8 @@ const Form = ({ createTodo }) => {
 
     createTodo(newTodo);
 
-    setEnteredTodo("");
   };
+
   return (
     <div>
       <form onSubmit={addTodo}>
