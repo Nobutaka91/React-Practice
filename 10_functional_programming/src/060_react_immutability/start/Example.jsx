@@ -1,9 +1,14 @@
 import { useState } from "react";
 
-const Child = (props) => {
+const Child = ({ state, setState }) => {
+  const increment = () => {
+    setState(prev => ({ value: prev.value + 1}));
+  }
+
   return (
     <>
-      <span>{props.state.value}</span>
+      <span>{state.value}</span>
+      <button onClick={increment}>+</button>
     </>
   );
 };
@@ -14,7 +19,7 @@ const Example = () => {
   return (
     <>
       <div>
-        <Child state={state}/>
+        <Child state={state} setState={setState} />
       </div>
     </>
   );

@@ -1,8 +1,11 @@
 const Example = () => {
+  const nums = [1, 2, 3, 4];
+  
+  const add = (arry) => arry.reduce((accu, curr) => accu + curr);
+
   return (
     <>
-      <h3>状態管理と処理を分離</h3>
-      <p>状態（データ）と処理（やりたいこと）は切り離す</p>
+      <div>関数型: {add(nums)}</div>
     </>
   );
 };
