@@ -1,17 +1,22 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 
 const initialState = 0;
 const reducer = (state = initialState, { type, step }) => {
+    console.log(type)
     switch (type) {
-      case "+":
+      case "counter/+":
         return state + step;
-      case "-":
+      case "counter/-":
         return state - step;
       default:
         return state;
     }
-  };
+};
+
+const reducers = combineReducers({
+  counter: reducer
+})
 
 export default createStore(
-    reducer
+    reducers
 );
