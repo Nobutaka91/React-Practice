@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Child from "./Child";
+import { useCallback } from "react";
 
 const Example = () => {
   console.log("Parent render");
@@ -7,9 +8,9 @@ const Example = () => {
   const [countA, setCountA] = useState(0);
   const [countB, setCountB] = useState(0);
 
-  const clickHandler = () => {
-    setCountB((pre) => pre + 1);
-  }
+  const clickHandler = useCallback(() => {
+    setCountB(countB + 1);
+  }, [countB]);
 
   return (
     <div className="parent">
